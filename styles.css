@@ -1,3 +1,19 @@
 img {
   height: 50px;
 }
+
+.section-default {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 50%;
+}
+
+#signup-form .form-control {
+  margin: .5rem 0;
+}
+
+.signup-link {
+  color: rgba(0,0,0,.5)
+}
