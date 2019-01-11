@@ -9,7 +9,7 @@ if (isset($_POST['signup-submit'])) {
   $passwordrepeat = $_POST['pwd-repeat'];
   $pattern = "/^[a-zA-Z0-9]*$/";
 
-  //check if fields were populated
+  //check if fields are empty
   if (empty($username) || empty($email) || empty($password) || empty($passwordrepeat)) {
     header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
     exit();

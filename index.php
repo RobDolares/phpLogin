@@ -2,12 +2,17 @@
   require 'header.php';
  ?>
 
-
     <main>
       <div class="wrapper-main">
         <section class="section-default">
-          <p class="login-status">You are logged in</p>
-          <p class="login-status">You are logged out</p>
+          <?php
+            if (isset($_SESSION['userId'])) {
+              echo '<p class="login-status">You are logged in</p>';
+            }
+            else {
+              echo '<p class="login-status">You are logged out</p>';
+            }
+           ?>
         </section>
       </div>
     </main>
