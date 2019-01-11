@@ -60,12 +60,22 @@ if (isset($_POST['signup-submit'])) {
           exit();
         }
         else {
-          mysqli_stmt_bind_param($stmt, "sss", $username, $email, $password);
+          $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+
+          mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
           mysqli_stmt_execute($stmt);
-          mysqli_stmt_store_result($stmt);
+
+          header("Location: ../signup.php?signup=success");
         }
       }
     }
-
   }
+  // Close database connection
+  mysqli_stmt_close($stmt);
+  mysqli_close($conn);
+
+}
+// Send user back to signup if this is accessed without clicking submit
+else {
+  header("Location: ../signup.php");
 }
