@@ -17,3 +17,7 @@ img {
 .signup-link {
   color: rgba(0,0,0,.5)
 }
+
+.signuperror {
+  color: red;
+}
